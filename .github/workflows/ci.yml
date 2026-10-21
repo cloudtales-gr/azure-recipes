@@ -1,0 +1,68 @@
+# Checks every push and pull request: catalog consistency, Markdown, scripts and Bicep.
+# Free: public repository. Nothing here signs in to Azure.
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  catalog:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v7
+      - name: catalog.json is consistent with recipes/
+        run: python3 tools/catalog.py check
+      - name: README recipe list is up to date (python tools/catalog.py readme)
+        run: |
+          python3 tools/catalog.py readme
+          git diff --exit-code README.md
+
+  markdown:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v7
+      - run: npx -y markdownlint-cli2 "**/*.md"
+
+  scripts:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v7
+      - name: ShellCheck
+        run: find . -name '*.sh' -print0 | xargs -0 -r shellcheck
+      - name: PSScriptAnalyzer (errors fail the build)
+        shell: pwsh
+        run: |
+          Install-PSResource -Name PSScriptAnalyzer -Repository PSGallery -TrustRepository -Quiet
+          $issues = Invoke-ScriptAnalyzer -Path . -Recurse -Severity Error, Warning
+          $issues | Format-Table RuleName, Severity, ScriptName, Line, Message -AutoSize -Wrap
+          if ($issues | Where-Object Severity -eq 'Error') { exit 1 }
+
+  bicep:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v7
+      - name: Install Bicep CLI
+        run: |
+          curl -sLo bicep https://github.com/Azure/bicep/releases/latest/download/bicep-linux-x64
+          sudo install -m 0755 bicep /usr/local/bin/bicep && rm bicep
+          bicep --version
+      - name: Build every main.bicep (lint warnings shown, errors fail)
+        run: |
+          status=0
+          while IFS= read -r -d '' f; do
+            echo "::group::$f"; bicep build "$f" --stdout > /dev/null || status=1; echo "::endgroup::"
+          done < <(find recipes templates -name 'main.bicep' -print0)
+          exit $status
+      - name: PSRule for Azure (report only)
+        if: hashFiles('recipes/**/main.bicep') != ''
+        continue-on-error: true
+        shell: pwsh
+        run: |
+          Install-PSResource -Name PSRule.Rules.Azure -Repository PSGallery -TrustRepository -Quiet
+          Assert-PSRule -Module PSRule.Rules.Azure -InputPath ./recipes/ -Format File -Outcome Fail, Error

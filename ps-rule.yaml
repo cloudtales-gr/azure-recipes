@@ -1,0 +1,20 @@
+# PSRule for Azure: checks every recipe's main.bicep against the Well-Architected rules.
+# Lab recipes break some production rules on purpose (single region, no zone redundancy);
+# those are excluded here and the article says what production would add.
+requires:
+  PSRule.Rules.Azure: '>=1.39.0'
+include:
+  module:
+    - PSRule.Rules.Azure
+configuration:
+  AZURE_BICEP_FILE_EXPANSION: true
+  AZURE_BICEP_FILE_EXPANSION_TIMEOUT: 30
+input:
+  pathIgnore:
+    - '**'
+    - '!recipes/**/main.bicep'
+rule:
+  exclude:
+    - Azure.Resource.UseTags          # tags come from the resource group in deploy.ps1
+    - Azure.Storage.UseReplication    # labs use LRS on purpose
+    - Azure.VM.UseHybridUseBenefit    # licensing is a reader's choice

@@ -1,0 +1,4 @@
+*.parameters.local.json
+.vscode/
+*.log
+out/

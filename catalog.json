@@ -1,0 +1,1353 @@
+{
+  "categories": [
+    {
+      "code": "GOV",
+      "name": "Foundations and governance",
+      "slug": "governance",
+      "description": "Tenant security, subscriptions, policy, RBAC and the tools every other recipe uses.",
+      "weight": 10
+    },
+    {
+      "code": "ID",
+      "name": "Identity with Microsoft Entra ID",
+      "slug": "identity",
+      "description": "Users, Conditional Access, passwordless, sync, app and workload identities.",
+      "weight": 20
+    },
+    {
+      "code": "NET",
+      "name": "Networking",
+      "slug": "networking",
+      "description": "VNets, private endpoints, DNS, VPN, firewalls and load balancing.",
+      "weight": 30
+    },
+    {
+      "code": "VM",
+      "name": "Virtual Machines",
+      "slug": "virtual-machines",
+      "description": "Windows and Linux VMs: create, secure, patch, image, scale and rescue.",
+      "weight": 40
+    },
+    {
+      "code": "WIN",
+      "name": "Windows Server on Azure",
+      "slug": "windows-server",
+      "description": "Active Directory, file services, hotpatching and Windows workloads on Azure VMs.",
+      "weight": 50
+    },
+    {
+      "code": "LNX",
+      "name": "Linux on Azure",
+      "slug": "linux",
+      "description": "Entra sign-in, web servers, monitoring and storage for Linux VMs.",
+      "weight": 60
+    },
+    {
+      "code": "AVD",
+      "name": "Azure Virtual Desktop",
+      "slug": "virtual-desktop",
+      "description": "Host pools, profiles, RemoteApp and scaling for Azure Virtual Desktop.",
+      "weight": 70
+    },
+    {
+      "code": "STO",
+      "name": "Storage",
+      "slug": "storage",
+      "description": "Secure storage accounts, SAS, lifecycle, immutability and data movement.",
+      "weight": 80
+    },
+    {
+      "code": "DB",
+      "name": "Databases",
+      "slug": "databases",
+      "description": "Azure SQL, PostgreSQL, MySQL and Cosmos DB with Entra authentication and private access.",
+      "weight": 90
+    },
+    {
+      "code": "CTR",
+      "name": "Containers and AKS",
+      "slug": "containers",
+      "description": "Container Registry, Container Apps and AKS with identities instead of secrets.",
+      "weight": 100
+    },
+    {
+      "code": "APP",
+      "name": "App platform",
+      "slug": "app-platform",
+      "description": "App Service, Functions, Static Web Apps, messaging and integration.",
+      "weight": 110
+    },
+    {
+      "code": "SEC",
+      "name": "Security",
+      "slug": "security",
+      "description": "Key Vault, Defender for Cloud, Sentinel and the zero-key baseline.",
+      "weight": 120
+    },
+    {
+      "code": "MON",
+      "name": "Monitoring",
+      "slug": "monitoring",
+      "description": "Log Analytics, agents, alerts, KQL, Application Insights and log cost.",
+      "weight": 130
+    },
+    {
+      "code": "BCK",
+      "name": "Backup and disaster recovery",
+      "slug": "backup",
+      "description": "Azure Backup, ransomware protection and Site Recovery drills.",
+      "weight": 140
+    },
+    {
+      "code": "ARC",
+      "name": "Hybrid with Azure Arc",
+      "slug": "azure-arc",
+      "description": "On-premises servers managed, patched and protected from Azure.",
+      "weight": 150
+    },
+    {
+      "code": "IAC",
+      "name": "Infrastructure as Code and DevOps",
+      "slug": "iac",
+      "description": "Bicep, Terraform, pipelines and deployments without stored secrets.",
+      "weight": 160
+    },
+    {
+      "code": "COST",
+      "name": "Cost",
+      "slug": "cost",
+      "description": "Finding waste, allocating cost and buying compute the cheaper way.",
+      "weight": 170
+    },
+    {
+      "code": "AI",
+      "name": "Azure AI",
+      "slug": "ai",
+      "description": "Azure OpenAI, AI Search, Speech and agents, called with managed identity.",
+      "weight": 180
+    },
+    {
+      "code": "MIG",
+      "name": "Migration",
+      "slug": "migration",
+      "description": "Moving servers, files, databases and websites to Azure.",
+      "weight": 190
+    }
+  ],
+  "recipes": [
+    {
+      "id": "GOV-01",
+      "category": "GOV",
+      "order": 1,
+      "title": "Secure a new Azure tenant in the first hour: MFA, break-glass accounts, security defaults",
+      "slug": "gov-01-secure-new-azure-tenant-first-hour",
+      "wave": 1,
+      "week": 2
+    },
+    {
+      "id": "GOV-02",
+      "category": "GOV",
+      "order": 2,
+      "title": "Azure CLI, Az PowerShell and Bicep on Windows and Linux: the toolkit every recipe uses",
+      "slug": "gov-02-azure-cli-az-powershell-bicep-windows-linux",
+      "wave": 1,
+      "week": 1
+    },
+    {
+      "id": "GOV-03",
+      "category": "GOV",
+      "order": 3,
+      "title": "Management groups and subscriptions for a small organisation",
+      "slug": "gov-03-management-groups-subscriptions-small-organisation"
+    },
+    {
+      "id": "GOV-04",
+      "category": "GOV",
+      "order": 4,
+      "title": "Naming and tagging standard, enforced with Azure Policy",
+      "slug": "gov-04-naming-tagging-standard-enforced-azure-policy"
+    },
+    {
+      "id": "GOV-05",
+      "category": "GOV",
+      "order": 5,
+      "title": "Azure Policy: allowed regions and VM sizes",
+      "slug": "gov-05-azure-policy-allowed-regions-vm-sizes"
+    },
+    {
+      "id": "GOV-06",
+      "category": "GOV",
+      "order": 6,
+      "title": "Resource locks: stop the accidental delete",
+      "slug": "gov-06-resource-locks-stop-accidental-delete"
+    },
+    {
+      "id": "GOV-07",
+      "category": "GOV",
+      "order": 7,
+      "title": "Least privilege with a custom \"VM Operator\" role",
+      "slug": "gov-07-least-privilege-custom-vm-operator-role"
+    },
+    {
+      "id": "GOV-08",
+      "category": "GOV",
+      "order": 8,
+      "title": "Privileged Identity Management for Azure roles: just-in-time Owner",
+      "slug": "gov-08-privileged-identity-management-just-in-time-owner"
+    },
+    {
+      "id": "GOV-09",
+      "category": "GOV",
+      "order": 9,
+      "title": "Azure Resource Graph: 15 queries every admin needs",
+      "slug": "gov-09-azure-resource-graph-15-queries-admin-needs"
+    },
+    {
+      "id": "GOV-10",
+      "category": "GOV",
+      "order": 10,
+      "title": "A self-cleaning sandbox: expiry tags and a nightly cleanup Function",
+      "slug": "gov-10-self-cleaning-sandbox-expiry-tags-nightly-cleanup"
+    },
+    {
+      "id": "GOV-11",
+      "category": "GOV",
+      "order": 11,
+      "title": "Azure Landing Zone with the Bicep accelerator, sized for a small tenant",
+      "slug": "gov-11-azure-landing-zone-bicep-small-tenant"
+    },
+    {
+      "id": "GOV-12",
+      "category": "GOV",
+      "order": 12,
+      "title": "Activity Log in Log Analytics: who deleted what, and when",
+      "slug": "gov-12-activity-log-who-deleted-what"
+    },
+    {
+      "id": "ID-01",
+      "category": "ID",
+      "order": 1,
+      "title": "Users and groups with Microsoft Graph PowerShell",
+      "slug": "id-01-users-groups-microsoft-graph-powershell"
+    },
+    {
+      "id": "ID-02",
+      "category": "ID",
+      "order": 2,
+      "title": "Dynamic groups by department and device",
+      "slug": "id-02-dynamic-groups-department-device"
+    },
+    {
+      "id": "ID-03",
+      "category": "ID",
+      "order": 3,
+      "title": "Conditional Access baseline: MFA for admins, block legacy authentication",
+      "slug": "id-03-conditional-access-baseline"
+    },
+    {
+      "id": "ID-04",
+      "category": "ID",
+      "order": 4,
+      "title": "Passwordless with passkeys (FIDO2 and Microsoft Authenticator)",
+      "slug": "id-04-passwordless-passkeys-fido2-authenticator"
+    },
+    {
+      "id": "ID-05",
+      "category": "ID",
+      "order": 5,
+      "title": "Self-service password reset with on-premises writeback",
+      "slug": "id-05-self-service-password-reset-writeback"
+    },
+    {
+      "id": "ID-06",
+      "category": "ID",
+      "order": 6,
+      "title": "Entra Cloud Sync from an on-premises AD (lab with a Windows Server 2025 DC)",
+      "slug": "id-06-entra-cloud-sync-on-premises-ad"
+    },
+    {
+      "id": "ID-07",
+      "category": "ID",
+      "order": 7,
+      "title": "App registration with certificate credentials instead of client secrets",
+      "slug": "id-07-app-registration-certificate-credentials"
+    },
+    {
+      "id": "ID-08",
+      "category": "ID",
+      "order": 8,
+      "title": "Managed identities: system-assigned vs user-assigned, hands-on",
+      "slug": "id-08-managed-identities-system-vs-user-assigned",
+      "wave": 1,
+      "week": 7
+    },
+    {
+      "id": "ID-09",
+      "category": "ID",
+      "order": 9,
+      "title": "Workload identity federation: GitHub Actions to Azure without secrets",
+      "slug": "id-09-workload-identity-federation-github-actions-azure",
+      "wave": 1,
+      "week": 11
+    },
+    {
+      "id": "ID-10",
+      "category": "ID",
+      "order": 10,
+      "title": "B2B guest access with cross-tenant access settings",
+      "slug": "id-10-b2b-guest-access-cross-tenant-access-settings"
+    },
+    {
+      "id": "ID-11",
+      "category": "ID",
+      "order": 11,
+      "title": "Access reviews for guests and privileged groups",
+      "slug": "id-11-access-reviews-guests-privileged-groups"
+    },
+    {
+      "id": "ID-12",
+      "category": "ID",
+      "order": 12,
+      "title": "Entitlement management: an access package for a project team",
+      "slug": "id-12-entitlement-management-access-package-project-team"
+    },
+    {
+      "id": "ID-13",
+      "category": "ID",
+      "order": 13,
+      "title": "Sign-in logs in Log Analytics: KQL for suspicious sign-ins",
+      "slug": "id-13-sign-in-logs-kql-suspicious-sign-ins"
+    },
+    {
+      "id": "ID-14",
+      "category": "ID",
+      "order": 14,
+      "title": "Alert when a break-glass account signs in",
+      "slug": "id-14-alert-break-glass-account-sign-in"
+    },
+    {
+      "id": "NET-01",
+      "category": "NET",
+      "order": 1,
+      "title": "VNet, subnets and NSGs: the first network",
+      "slug": "net-01-vnet-subnets-nsgs-first-network",
+      "wave": 1,
+      "week": 3
+    },
+    {
+      "id": "NET-02",
+      "category": "NET",
+      "order": 2,
+      "title": "Hub and spoke with VNet peering in Bicep",
+      "slug": "net-02-hub-spoke-vnet-peering-bicep"
+    },
+    {
+      "id": "NET-03",
+      "category": "NET",
+      "order": 3,
+      "title": "Private Endpoint for a Storage account with Private DNS",
+      "slug": "net-03-private-endpoint-storage-account-private-dns",
+      "wave": 1,
+      "week": 10
+    },
+    {
+      "id": "NET-04",
+      "category": "NET",
+      "order": 4,
+      "title": "Azure Bastion: RDP and SSH without public IPs",
+      "slug": "net-04-azure-bastion-rdp-ssh-without-public-ips",
+      "wave": 1,
+      "week": 6
+    },
+    {
+      "id": "NET-05",
+      "category": "NET",
+      "order": 5,
+      "title": "NAT Gateway: one predictable outbound IP",
+      "slug": "net-05-nat-gateway-predictable-outbound-ip"
+    },
+    {
+      "id": "NET-06",
+      "category": "NET",
+      "order": 6,
+      "title": "Azure Firewall Basic: spokes forced through the hub",
+      "slug": "net-06-azure-firewall-basic-hub-spoke"
+    },
+    {
+      "id": "NET-07",
+      "category": "NET",
+      "order": 7,
+      "title": "Private DNS Resolver: hybrid DNS between on-premises and Azure",
+      "slug": "net-07-private-dns-resolver-hybrid-dns"
+    },
+    {
+      "id": "NET-08",
+      "category": "NET",
+      "order": 8,
+      "title": "Site-to-site VPN to an on-premises lab (strongSwan on Linux)",
+      "slug": "net-08-site-to-site-vpn-strongswan"
+    },
+    {
+      "id": "NET-09",
+      "category": "NET",
+      "order": 9,
+      "title": "Point-to-site VPN with Entra ID authentication",
+      "slug": "net-09-point-to-site-vpn-entra-id"
+    },
+    {
+      "id": "NET-10",
+      "category": "NET",
+      "order": 10,
+      "title": "Standard Load Balancer for two web VMs",
+      "slug": "net-10-standard-load-balancer-two-web-vms"
+    },
+    {
+      "id": "NET-11",
+      "category": "NET",
+      "order": 11,
+      "title": "Application Gateway with WAF in front of App Service",
+      "slug": "net-11-application-gateway-waf-app-service"
+    },
+    {
+      "id": "NET-12",
+      "category": "NET",
+      "order": 12,
+      "title": "Azure Front Door with a custom domain and WAF",
+      "slug": "net-12-azure-front-door-custom-domain-waf"
+    },
+    {
+      "id": "NET-13",
+      "category": "NET",
+      "order": 13,
+      "title": "Azure DNS: host a public zone and move a domain to it",
+      "slug": "net-13-azure-dns-host-public-zone-move-domain"
+    },
+    {
+      "id": "NET-14",
+      "category": "NET",
+      "order": 14,
+      "title": "VNet flow logs and Traffic Analytics",
+      "slug": "net-14-vnet-flow-logs-traffic-analytics"
+    },
+    {
+      "id": "NET-15",
+      "category": "NET",
+      "order": 15,
+      "title": "Network Watcher: troubleshooting \"it doesn't connect\"",
+      "slug": "net-15-network-watcher-connection-troubleshooting"
+    },
+    {
+      "id": "VM-01",
+      "category": "VM",
+      "order": 1,
+      "title": "Windows Server 2025 VM with PowerShell and az CLI",
+      "slug": "vm-01-windows-server-2025-vm-powershell-az-cli",
+      "wave": 1,
+      "week": 4
+    },
+    {
+      "id": "VM-02",
+      "category": "VM",
+      "order": 2,
+      "title": "Ubuntu 24.04 VM with SSH keys and cloud-init",
+      "slug": "vm-02-ubuntu-24-04-vm-ssh-keys-cloud-init",
+      "wave": 1,
+      "week": 5
+    },
+    {
+      "id": "VM-03",
+      "category": "VM",
+      "order": 3,
+      "title": "Auto-shutdown, resize and deallocate: stop paying for idle VMs",
+      "slug": "vm-03-auto-shutdown-resize-deallocate-idle-vms"
+    },
+    {
+      "id": "VM-04",
+      "category": "VM",
+      "order": 4,
+      "title": "Managed disks: add, expand, snapshot, restore",
+      "slug": "vm-04-managed-disks-add-expand-snapshot-restore"
+    },
+    {
+      "id": "VM-05",
+      "category": "VM",
+      "order": 5,
+      "title": "Trusted Launch and Secure Boot",
+      "slug": "vm-05-trusted-launch-secure-boot"
+    },
+    {
+      "id": "VM-06",
+      "category": "VM",
+      "order": 6,
+      "title": "Run Command and Custom Script Extension",
+      "slug": "vm-06-run-command-custom-script-extension"
+    },
+    {
+      "id": "VM-07",
+      "category": "VM",
+      "order": 7,
+      "title": "Azure Update Manager: patch Windows and Linux on a schedule",
+      "slug": "vm-07-azure-update-manager-scheduled-patching"
+    },
+    {
+      "id": "VM-08",
+      "category": "VM",
+      "order": 8,
+      "title": "Machine Configuration (guest configuration) baselines",
+      "slug": "vm-08-machine-configuration-baselines"
+    },
+    {
+      "id": "VM-09",
+      "category": "VM",
+      "order": 9,
+      "title": "A custom image with Azure Image Builder and Compute Gallery",
+      "slug": "vm-09-custom-image-azure-image-builder-compute-gallery"
+    },
+    {
+      "id": "VM-10",
+      "category": "VM",
+      "order": 10,
+      "title": "VM Scale Set with autoscale",
+      "slug": "vm-10-vm-scale-set-autoscale"
+    },
+    {
+      "id": "VM-11",
+      "category": "VM",
+      "order": 11,
+      "title": "Spot VMs for batch jobs",
+      "slug": "vm-11-spot-vms-batch-jobs"
+    },
+    {
+      "id": "VM-12",
+      "category": "VM",
+      "order": 12,
+      "title": "Serial console and boot diagnostics: rescue a VM that won't boot",
+      "slug": "vm-12-serial-console-boot-diagnostics-rescue"
+    },
+    {
+      "id": "WIN-01",
+      "category": "WIN",
+      "order": 1,
+      "title": "An Active Directory domain controller on an Azure VM",
+      "slug": "win-01-active-directory-domain-controller-azure-vm"
+    },
+    {
+      "id": "WIN-02",
+      "category": "WIN",
+      "order": 2,
+      "title": "Join Azure VMs to the domain, with DNS done right",
+      "slug": "win-02-join-azure-vms-domain-dns-done-right"
+    },
+    {
+      "id": "WIN-03",
+      "category": "WIN",
+      "order": 3,
+      "title": "Windows Admin Center in the Azure portal",
+      "slug": "win-03-windows-admin-center-azure-portal"
+    },
+    {
+      "id": "WIN-04",
+      "category": "WIN",
+      "order": 4,
+      "title": "Hotpatching with Windows Server 2025 Datacenter: Azure Edition",
+      "slug": "win-04-hotpatching-windows-server-2025-azure-edition"
+    },
+    {
+      "id": "WIN-05",
+      "category": "WIN",
+      "order": 5,
+      "title": "SMB over QUIC: a file server without a VPN",
+      "slug": "win-05-smb-over-quic-file-server"
+    },
+    {
+      "id": "WIN-06",
+      "category": "WIN",
+      "order": 6,
+      "title": "Azure File Sync: a cloud-tiered file server",
+      "slug": "win-06-azure-file-sync-cloud-tiered-file-server"
+    },
+    {
+      "id": "WIN-07",
+      "category": "WIN",
+      "order": 7,
+      "title": "IIS with a TLS certificate from Key Vault",
+      "slug": "win-07-iis-tls-certificate-key-vault"
+    },
+    {
+      "id": "WIN-08",
+      "category": "WIN",
+      "order": 8,
+      "title": "Universal Print instead of a print server",
+      "slug": "win-08-universal-print-instead-of-print-server"
+    },
+    {
+      "id": "LNX-01",
+      "category": "LNX",
+      "order": 1,
+      "title": "Sign in to Linux VMs with Entra ID: SSH without keys to manage",
+      "slug": "lnx-01-entra-id-sign-in-linux-vms"
+    },
+    {
+      "id": "LNX-02",
+      "category": "LNX",
+      "order": 2,
+      "title": "Nginx reverse proxy with Let's Encrypt",
+      "slug": "lnx-02-nginx-reverse-proxy-lets-encrypt"
+    },
+    {
+      "id": "LNX-03",
+      "category": "LNX",
+      "order": 3,
+      "title": "Azure Monitor Agent and syslog to Log Analytics",
+      "slug": "lnx-03-azure-monitor-agent-syslog-log-analytics"
+    },
+    {
+      "id": "LNX-04",
+      "category": "LNX",
+      "order": 4,
+      "title": "Mount Azure Files over NFS and SMB",
+      "slug": "lnx-04-mount-azure-files-over-nfs-smb"
+    },
+    {
+      "id": "LNX-05",
+      "category": "LNX",
+      "order": 5,
+      "title": "A Docker host on Ubuntu that pulls from ACR with managed identity",
+      "slug": "lnx-05-docker-host-acr-managed-identity"
+    },
+    {
+      "id": "LNX-06",
+      "category": "LNX",
+      "order": 6,
+      "title": "A WireGuard gateway VM",
+      "slug": "lnx-06-wireguard-gateway-vm"
+    },
+    {
+      "id": "LNX-07",
+      "category": "LNX",
+      "order": 7,
+      "title": "Unattended upgrades vs Azure Update Manager",
+      "slug": "lnx-07-unattended-upgrades-azure-update-manager"
+    },
+    {
+      "id": "AVD-01",
+      "category": "AVD",
+      "order": 1,
+      "title": "A pooled host pool with Entra-joined session hosts",
+      "slug": "avd-01-pooled-host-pool-entra-joined-session-hosts"
+    },
+    {
+      "id": "AVD-02",
+      "category": "AVD",
+      "order": 2,
+      "title": "FSLogix profiles on Azure Files with Entra Kerberos",
+      "slug": "avd-02-fslogix-profiles-azure-files-entra-kerberos"
+    },
+    {
+      "id": "AVD-03",
+      "category": "AVD",
+      "order": 3,
+      "title": "RemoteApp: publish a single application",
+      "slug": "avd-03-remoteapp-publish-single-application"
+    },
+    {
+      "id": "AVD-04",
+      "category": "AVD",
+      "order": 4,
+      "title": "Scaling plans: session hosts off when nobody works",
+      "slug": "avd-04-scaling-plans-session-hosts"
+    },
+    {
+      "id": "AVD-05",
+      "category": "AVD",
+      "order": 5,
+      "title": "Windows 365 vs AVD: the same desktop, priced both ways",
+      "slug": "avd-05-windows-365-vs-avd-cost"
+    },
+    {
+      "id": "STO-01",
+      "category": "STO",
+      "order": 1,
+      "title": "Storage account secure baseline: no shared keys, TLS 1.2, private only",
+      "slug": "sto-01-storage-account-secure-baseline",
+      "wave": 1,
+      "week": 9
+    },
+    {
+      "id": "STO-02",
+      "category": "STO",
+      "order": 2,
+      "title": "User delegation SAS: the only SAS worth issuing",
+      "slug": "sto-02-user-delegation-sas"
+    },
+    {
+      "id": "STO-03",
+      "category": "STO",
+      "order": 3,
+      "title": "Blob lifecycle rules: hot to cool to cold to archive, automatically",
+      "slug": "sto-03-blob-lifecycle-rules-hot-cool-cold-archive"
+    },
+    {
+      "id": "STO-04",
+      "category": "STO",
+      "order": 4,
+      "title": "Immutable storage (WORM) for compliance records",
+      "slug": "sto-04-immutable-storage-compliance-records"
+    },
+    {
+      "id": "STO-05",
+      "category": "STO",
+      "order": 5,
+      "title": "Azure Files with identity-based access (Entra Kerberos)",
+      "slug": "sto-05-azure-files-identity-based-access"
+    },
+    {
+      "id": "STO-06",
+      "category": "STO",
+      "order": 6,
+      "title": "AzCopy recipes: copy, sync, and move from AWS S3",
+      "slug": "sto-06-azcopy-recipes-copy-sync-move-aws-s3"
+    },
+    {
+      "id": "STO-07",
+      "category": "STO",
+      "order": 7,
+      "title": "Static website: Storage account vs Static Web Apps",
+      "slug": "sto-07-static-website-storage-vs-static-web-apps"
+    },
+    {
+      "id": "STO-08",
+      "category": "STO",
+      "order": 8,
+      "title": "Customer-managed keys with Key Vault",
+      "slug": "sto-08-customer-managed-keys-key-vault"
+    },
+    {
+      "id": "STO-09",
+      "category": "STO",
+      "order": 9,
+      "title": "Data Lake Storage Gen2: folders and ACLs",
+      "slug": "sto-09-data-lake-storage-gen2-folders-acls"
+    },
+    {
+      "id": "STO-10",
+      "category": "STO",
+      "order": 10,
+      "title": "A geo-redundant storage failover drill",
+      "slug": "sto-10-geo-redundant-storage-failover-drill"
+    },
+    {
+      "id": "DB-01",
+      "category": "DB",
+      "order": 1,
+      "title": "Azure SQL Database with Entra-only authentication",
+      "slug": "db-01-azure-sql-database-entra-only-authentication"
+    },
+    {
+      "id": "DB-02",
+      "category": "DB",
+      "order": 2,
+      "title": "Azure SQL behind a private endpoint, with auditing",
+      "slug": "db-02-azure-sql-behind-private-endpoint-auditing"
+    },
+    {
+      "id": "DB-03",
+      "category": "DB",
+      "order": 3,
+      "title": "Azure SQL failover group across two regions",
+      "slug": "db-03-azure-sql-failover-group-across-two-regions"
+    },
+    {
+      "id": "DB-04",
+      "category": "DB",
+      "order": 4,
+      "title": "PostgreSQL Flexible Server with Entra authentication and private access",
+      "slug": "db-04-postgresql-flexible-server-entra-authentication"
+    },
+    {
+      "id": "DB-05",
+      "category": "DB",
+      "order": 5,
+      "title": "MySQL Flexible Server for a WordPress site",
+      "slug": "db-05-mysql-flexible-server-wordpress-site"
+    },
+    {
+      "id": "DB-06",
+      "category": "DB",
+      "order": 6,
+      "title": "Cosmos DB with RBAC and no keys",
+      "slug": "db-06-cosmos-db-rbac-no-keys"
+    },
+    {
+      "id": "DB-07",
+      "category": "DB",
+      "order": 7,
+      "title": "SQL Server on an Azure VM: automated backup and patching",
+      "slug": "db-07-sql-server-azure-vm-automated-backup-patching"
+    },
+    {
+      "id": "DB-08",
+      "category": "DB",
+      "order": 8,
+      "title": "Azure SQL serverless: pause when idle",
+      "slug": "db-08-azure-sql-serverless-pause-idle"
+    },
+    {
+      "id": "CTR-01",
+      "category": "CTR",
+      "order": 1,
+      "title": "Azure Container Registry with Entra authentication and ACR Tasks",
+      "slug": "ctr-01-container-registry-entra-auth-acr-tasks"
+    },
+    {
+      "id": "CTR-02",
+      "category": "CTR",
+      "order": 2,
+      "title": "Azure Container Apps: a web app with managed identity",
+      "slug": "ctr-02-azure-container-apps-web-app-managed-identity"
+    },
+    {
+      "id": "CTR-03",
+      "category": "CTR",
+      "order": 3,
+      "title": "Container Apps jobs: a scheduled job instead of a VM cron",
+      "slug": "ctr-03-container-apps-jobs-scheduled-job"
+    },
+    {
+      "id": "CTR-04",
+      "category": "CTR",
+      "order": 4,
+      "title": "AKS Automatic: the first cluster",
+      "slug": "ctr-04-aks-automatic-first-cluster"
+    },
+    {
+      "id": "CTR-05",
+      "category": "CTR",
+      "order": 5,
+      "title": "AKS with Entra ID and Kubernetes RBAC",
+      "slug": "ctr-05-aks-entra-id-kubernetes-rbac"
+    },
+    {
+      "id": "CTR-06",
+      "category": "CTR",
+      "order": 6,
+      "title": "AKS workload identity: pods that call Azure without secrets",
+      "slug": "ctr-06-aks-workload-identity"
+    },
+    {
+      "id": "CTR-07",
+      "category": "CTR",
+      "order": 7,
+      "title": "Ingress on AKS with Application Gateway for Containers",
+      "slug": "ctr-07-aks-ingress-application-gateway-for-containers"
+    },
+    {
+      "id": "CTR-08",
+      "category": "CTR",
+      "order": 8,
+      "title": "GitOps on AKS with Flux",
+      "slug": "ctr-08-gitops-aks-flux"
+    },
+    {
+      "id": "CTR-09",
+      "category": "CTR",
+      "order": 9,
+      "title": "AKS node auto-provisioning to cut cost",
+      "slug": "ctr-09-aks-node-auto-provisioning-cut-cost"
+    },
+    {
+      "id": "APP-01",
+      "category": "APP",
+      "order": 1,
+      "title": "App Service: deploy a .NET 10 app with deployment slots",
+      "slug": "app-01-app-service-dotnet-10-deployment-slots"
+    },
+    {
+      "id": "APP-02",
+      "category": "APP",
+      "order": 2,
+      "title": "App Service: custom domain and a free managed certificate",
+      "slug": "app-02-app-service-custom-domain-managed-certificate"
+    },
+    {
+      "id": "APP-03",
+      "category": "APP",
+      "order": 3,
+      "title": "App Service with VNet integration and a private endpoint",
+      "slug": "app-03-app-service-vnet-integration-private-endpoint"
+    },
+    {
+      "id": "APP-04",
+      "category": "APP",
+      "order": 4,
+      "title": "Key Vault references in app settings",
+      "slug": "app-04-key-vault-references-app-settings"
+    },
+    {
+      "id": "APP-05",
+      "category": "APP",
+      "order": 5,
+      "title": "Azure Functions Flex Consumption with managed identity",
+      "slug": "app-05-azure-functions-flex-consumption-managed-identity"
+    },
+    {
+      "id": "APP-06",
+      "category": "APP",
+      "order": 6,
+      "title": "Durable Functions: a long-running workflow",
+      "slug": "app-06-durable-functions-long-running-workflow"
+    },
+    {
+      "id": "APP-07",
+      "category": "APP",
+      "order": 7,
+      "title": "Static Web Apps with Hugo and GitHub Actions",
+      "slug": "app-07-static-web-apps-hugo-github-actions",
+      "wave": 1,
+      "week": 12
+    },
+    {
+      "id": "APP-08",
+      "category": "APP",
+      "order": 8,
+      "title": "Event Grid: react to a new blob",
+      "slug": "app-08-event-grid-react-new-blob"
+    },
+    {
+      "id": "APP-09",
+      "category": "APP",
+      "order": 9,
+      "title": "Service Bus queues: sessions and dead-lettering",
+      "slug": "app-09-service-bus-queues-sessions-dead-lettering"
+    },
+    {
+      "id": "APP-10",
+      "category": "APP",
+      "order": 10,
+      "title": "API Management (Consumption) in front of Functions",
+      "slug": "app-10-api-management-consumption-functions"
+    },
+    {
+      "id": "APP-11",
+      "category": "APP",
+      "order": 11,
+      "title": "Logic Apps Standard: an approval by email",
+      "slug": "app-11-logic-apps-standard-approval-email"
+    },
+    {
+      "id": "SEC-01",
+      "category": "SEC",
+      "order": 1,
+      "title": "Key Vault with RBAC: secrets, keys and certificates",
+      "slug": "sec-01-key-vault-rbac-secrets-keys-certificates",
+      "wave": 1,
+      "week": 8
+    },
+    {
+      "id": "SEC-02",
+      "category": "SEC",
+      "order": 2,
+      "title": "Defender for Cloud: enable the plans and take the first secure score wins",
+      "slug": "sec-02-defender-for-cloud-plans-secure-score"
+    },
+    {
+      "id": "SEC-03",
+      "category": "SEC",
+      "order": 3,
+      "title": "Just-in-time VM access",
+      "slug": "sec-03-just-in-time-vm-access"
+    },
+    {
+      "id": "SEC-04",
+      "category": "SEC",
+      "order": 4,
+      "title": "Microsoft Sentinel: the first workspace and data connectors",
+      "slug": "sec-04-microsoft-sentinel-first-workspace-data-connectors"
+    },
+    {
+      "id": "SEC-05",
+      "category": "SEC",
+      "order": 5,
+      "title": "Sentinel: an analytics rule for impossible travel",
+      "slug": "sec-05-sentinel-analytics-rule-impossible-travel"
+    },
+    {
+      "id": "SEC-06",
+      "category": "SEC",
+      "order": 6,
+      "title": "Entra ID Protection: risk-based Conditional Access",
+      "slug": "sec-06-entra-id-protection-risk-based-conditional-access"
+    },
+    {
+      "id": "SEC-07",
+      "category": "SEC",
+      "order": 7,
+      "title": "Disable shared keys across a subscription with Azure Policy",
+      "slug": "sec-07-disable-shared-keys-azure-policy"
+    },
+    {
+      "id": "SEC-08",
+      "category": "SEC",
+      "order": 8,
+      "title": "A CIS baseline audit with Machine Configuration",
+      "slug": "sec-08-cis-baseline-audit-machine-configuration"
+    },
+    {
+      "id": "SEC-09",
+      "category": "SEC",
+      "order": 9,
+      "title": "Defender for Identity on a domain controller",
+      "slug": "sec-09-defender-for-identity-domain-controller"
+    },
+    {
+      "id": "SEC-10",
+      "category": "SEC",
+      "order": 10,
+      "title": "Find leaked keys in your repos and rotate them through Key Vault",
+      "slug": "sec-10-leaked-keys-repos-rotate-key-vault"
+    },
+    {
+      "id": "MON-01",
+      "category": "MON",
+      "order": 1,
+      "title": "One Log Analytics workspace or many: a decision recipe",
+      "slug": "mon-01-log-analytics-workspace-design"
+    },
+    {
+      "id": "MON-02",
+      "category": "MON",
+      "order": 2,
+      "title": "Azure Monitor Agent and Data Collection Rules",
+      "slug": "mon-02-azure-monitor-agent-data-collection-rules"
+    },
+    {
+      "id": "MON-03",
+      "category": "MON",
+      "order": 3,
+      "title": "Alerts and action groups: email, SMS, Teams",
+      "slug": "mon-03-alerts-action-groups-email-sms-teams"
+    },
+    {
+      "id": "MON-04",
+      "category": "MON",
+      "order": 4,
+      "title": "KQL for admins: 20 queries for VMs",
+      "slug": "mon-04-kql-admins-20-queries-vms"
+    },
+    {
+      "id": "MON-05",
+      "category": "MON",
+      "order": 5,
+      "title": "Application Insights for .NET 10 with OpenTelemetry",
+      "slug": "mon-05-application-insights-dotnet-10-opentelemetry"
+    },
+    {
+      "id": "MON-06",
+      "category": "MON",
+      "order": 6,
+      "title": "Workbooks: a VM health dashboard",
+      "slug": "mon-06-workbooks-vm-health-dashboard"
+    },
+    {
+      "id": "MON-07",
+      "category": "MON",
+      "order": 7,
+      "title": "Diagnostic settings at scale with Azure Policy",
+      "slug": "mon-07-diagnostic-settings-scale-azure-policy"
+    },
+    {
+      "id": "MON-08",
+      "category": "MON",
+      "order": 8,
+      "title": "Cut log cost with the Basic and Auxiliary table plans",
+      "slug": "mon-08-log-cost-basic-auxiliary-table-plans"
+    },
+    {
+      "id": "MON-09",
+      "category": "MON",
+      "order": 9,
+      "title": "Free uptime monitoring with GitHub Actions",
+      "slug": "mon-09-free-uptime-monitoring-github-actions"
+    },
+    {
+      "id": "BCK-01",
+      "category": "BCK",
+      "order": 1,
+      "title": "Azure Backup for VMs with a backup policy",
+      "slug": "bck-01-azure-backup-vms-backup-policy"
+    },
+    {
+      "id": "BCK-02",
+      "category": "BCK",
+      "order": 2,
+      "title": "Restore a single file from a VM backup",
+      "slug": "bck-02-restore-single-file-vm-backup"
+    },
+    {
+      "id": "BCK-03",
+      "category": "BCK",
+      "order": 3,
+      "title": "Back up Azure Files and blobs (vaulted backup)",
+      "slug": "bck-03-backup-azure-files-blobs"
+    },
+    {
+      "id": "BCK-04",
+      "category": "BCK",
+      "order": 4,
+      "title": "Immutable vault, soft delete and multi-user authorization against ransomware",
+      "slug": "bck-04-immutable-vault-soft-delete-mua"
+    },
+    {
+      "id": "BCK-05",
+      "category": "BCK",
+      "order": 5,
+      "title": "SQL Server in a VM: workload-aware backup",
+      "slug": "bck-05-sql-server-vm-workload-aware-backup"
+    },
+    {
+      "id": "BCK-06",
+      "category": "BCK",
+      "order": 6,
+      "title": "Azure Site Recovery: a VM replicated to a second region",
+      "slug": "bck-06-azure-site-recovery-vm-replicated-second-region"
+    },
+    {
+      "id": "BCK-07",
+      "category": "BCK",
+      "order": 7,
+      "title": "A DR drill you can run every quarter",
+      "slug": "bck-07-quarterly-dr-drill"
+    },
+    {
+      "id": "ARC-01",
+      "category": "ARC",
+      "order": 1,
+      "title": "Onboard an on-premises server to Azure Arc",
+      "slug": "arc-01-onboard-on-premises-server-azure-arc"
+    },
+    {
+      "id": "ARC-02",
+      "category": "ARC",
+      "order": 2,
+      "title": "Azure Update Manager for on-premises servers",
+      "slug": "arc-02-update-manager-on-premises-servers"
+    },
+    {
+      "id": "ARC-03",
+      "category": "ARC",
+      "order": 3,
+      "title": "Defender for Servers on-premises through Arc",
+      "slug": "arc-03-defender-for-servers-on-premises-arc"
+    },
+    {
+      "id": "ARC-04",
+      "category": "ARC",
+      "order": 4,
+      "title": "SSH to Arc servers without open ports",
+      "slug": "arc-04-ssh-arc-servers-without-open-ports"
+    },
+    {
+      "id": "ARC-05",
+      "category": "ARC",
+      "order": 5,
+      "title": "Azure Policy and Machine Configuration on non-Azure servers",
+      "slug": "arc-05-azure-policy-machine-configuration-non-azure-servers"
+    },
+    {
+      "id": "IAC-01",
+      "category": "IAC",
+      "order": 1,
+      "title": "Bicep from zero: parameters, modules, outputs",
+      "slug": "iac-01-bicep-zero-parameters-modules-outputs"
+    },
+    {
+      "id": "IAC-02",
+      "category": "IAC",
+      "order": 2,
+      "title": "Azure Verified Modules: stop writing every module yourself",
+      "slug": "iac-02-azure-verified-modules"
+    },
+    {
+      "id": "IAC-03",
+      "category": "IAC",
+      "order": 3,
+      "title": "Deployment stacks: protect what you deployed",
+      "slug": "iac-03-deployment-stacks"
+    },
+    {
+      "id": "IAC-04",
+      "category": "IAC",
+      "order": 4,
+      "title": "What-if and PSRule for Azure in CI",
+      "slug": "iac-04-what-if-psrule-azure-ci"
+    },
+    {
+      "id": "IAC-05",
+      "category": "IAC",
+      "order": 5,
+      "title": "GitHub Actions to Azure with OIDC, end to end",
+      "slug": "iac-05-github-actions-azure-oidc"
+    },
+    {
+      "id": "IAC-06",
+      "category": "IAC",
+      "order": 6,
+      "title": "Azure DevOps pipelines with workload identity service connections",
+      "slug": "iac-06-azure-devops-workload-identity-service-connections"
+    },
+    {
+      "id": "IAC-07",
+      "category": "IAC",
+      "order": 7,
+      "title": "Terraform on Azure with remote state and Entra authentication",
+      "slug": "iac-07-terraform-azure-remote-state-entra-authentication"
+    },
+    {
+      "id": "IAC-08",
+      "category": "IAC",
+      "order": 8,
+      "title": "Azure Developer CLI (azd): a template from scratch",
+      "slug": "iac-08-azure-developer-cli-template"
+    },
+    {
+      "id": "IAC-09",
+      "category": "IAC",
+      "order": 9,
+      "title": "Bicep vs Terraform: the same small landing zone in both",
+      "slug": "iac-09-bicep-vs-terraform-landing-zone"
+    },
+    {
+      "id": "COST-01",
+      "category": "COST",
+      "order": 1,
+      "title": "Find idle and orphaned resources with Resource Graph",
+      "slug": "cost-01-find-idle-orphaned-resources-resource-graph"
+    },
+    {
+      "id": "COST-02",
+      "category": "COST",
+      "order": 2,
+      "title": "Azure Advisor cost recommendations, weekly by email",
+      "slug": "cost-02-azure-advisor-weekly-cost-email"
+    },
+    {
+      "id": "COST-03",
+      "category": "COST",
+      "order": 3,
+      "title": "Tag-based cost allocation per project",
+      "slug": "cost-03-tag-based-cost-allocation-per-project"
+    },
+    {
+      "id": "COST-04",
+      "category": "COST",
+      "order": 4,
+      "title": "Reservations vs savings plans: a decision with real numbers",
+      "slug": "cost-04-reservations-savings-plans-decision-real-numbers"
+    },
+    {
+      "id": "COST-05",
+      "category": "COST",
+      "order": 5,
+      "title": "Start and stop VMs on a schedule",
+      "slug": "cost-05-start-stop-vms-schedule"
+    },
+    {
+      "id": "COST-06",
+      "category": "COST",
+      "order": 6,
+      "title": "Cost exports to a storage account and a simple Excel or Power BI view",
+      "slug": "cost-06-cost-exports-excel-power-bi"
+    },
+    {
+      "id": "AI-01",
+      "category": "AI",
+      "order": 1,
+      "title": "Azure OpenAI in AI Foundry: a model deployment behind a private endpoint",
+      "slug": "ai-01-azure-openai-private-endpoint"
+    },
+    {
+      "id": "AI-02",
+      "category": "AI",
+      "order": 2,
+      "title": "Call Azure OpenAI with managed identity, no API keys",
+      "slug": "ai-02-call-azure-openai-managed-identity-no-api-keys"
+    },
+    {
+      "id": "AI-03",
+      "category": "AI",
+      "order": 3,
+      "title": "RAG over your own documents with Azure AI Search",
+      "slug": "ai-03-rag-azure-ai-search"
+    },
+    {
+      "id": "AI-04",
+      "category": "AI",
+      "order": 4,
+      "title": "Azure AI Speech: turn articles into audio",
+      "slug": "ai-04-azure-ai-speech-articles-to-audio"
+    },
+    {
+      "id": "AI-05",
+      "category": "AI",
+      "order": 5,
+      "title": "Document Intelligence: extract fields from invoices",
+      "slug": "ai-05-document-intelligence-extract-fields-invoices"
+    },
+    {
+      "id": "AI-06",
+      "category": "AI",
+      "order": 6,
+      "title": "Content Safety in front of a chatbot",
+      "slug": "ai-06-content-safety-chatbot"
+    },
+    {
+      "id": "AI-07",
+      "category": "AI",
+      "order": 7,
+      "title": "An AI Foundry agent with tools and managed identity",
+      "slug": "ai-07-ai-foundry-agent-tools-managed-identity"
+    },
+    {
+      "id": "MIG-01",
+      "category": "MIG",
+      "order": 1,
+      "title": "Azure Migrate: discovery and assessment of a small estate",
+      "slug": "mig-01-azure-migrate-discovery-assessment-small-estate"
+    },
+    {
+      "id": "MIG-02",
+      "category": "MIG",
+      "order": 2,
+      "title": "Move a Hyper-V VM to Azure",
+      "slug": "mig-02-hyper-v-vm-to-azure"
+    },
+    {
+      "id": "MIG-03",
+      "category": "MIG",
+      "order": 3,
+      "title": "File shares to Azure Files with Storage Mover",
+      "slug": "mig-03-file-shares-azure-files-storage-mover"
+    },
+    {
+      "id": "MIG-04",
+      "category": "MIG",
+      "order": 4,
+      "title": "SQL Server to Azure SQL Managed Instance with Database Migration Service",
+      "slug": "mig-04-sql-server-to-azure-sql-managed-instance"
+    },
+    {
+      "id": "MIG-05",
+      "category": "MIG",
+      "order": 5,
+      "title": "WordPress to a static site on Azure",
+      "slug": "mig-05-wordpress-to-static-site-azure"
+    },
+    {
+      "id": "MIG-06",
+      "category": "MIG",
+      "order": 6,
+      "title": "From shared hosting to Azure: DNS, mail and certificates without downtime",
+      "slug": "mig-06-shared-hosting-to-azure-without-downtime"
+    }
+  ]
+}
