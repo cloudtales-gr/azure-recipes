@@ -10,8 +10,9 @@ function Show([string]$Name, [string]$Value, [bool]$Ok) {
 Show 'PowerShell'   $PSVersionTable.PSVersion.ToString() ($PSVersionTable.PSVersion -ge [version]'7.4')
 $az = (az version -o json 2>$null | ConvertFrom-Json).'azure-cli'
 Show 'Azure CLI'    $az ([bool]$az)
-$bicep = (bicep --version 2>$null) -replace 'Bicep CLI version ', ''
-Show 'Bicep (PATH)' $bicep ([bool]$bicep)
+$bicepCmd = Get-Command bicep -ErrorAction SilentlyContinue
+$bicep = if ($bicepCmd) { (& $bicepCmd.Source --version) -replace 'Bicep CLI version ([0-9.]+).*', '$1' }
+Show 'Bicep (PATH)' $(if ($bicep) { $bicep } else { 'not on PATH: close every terminal window and reopen' }) ([bool]$bicep)
 $azMod = Get-Module -ListAvailable Az.Accounts | Sort-Object Version -Descending | Select-Object -First 1
 Show 'Az.Accounts'  "$($azMod.Version)" ([bool]$azMod)
 
