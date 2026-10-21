@@ -9,12 +9,12 @@ Installs the toolkit every other recipe uses, then checks it and the sign-in. No
 ```powershell
 # Windows 10/11 or Windows Server 2025
 ./install-windows.ps1 -WithVSCode
-# open a new terminal, then
+# close every terminal window, open a new one, then
 pwsh ./verify.ps1
 ```
 
 ```bash
-# Ubuntu 24.04 or WSL
+# Ubuntu 24.04 or WSL, as your normal user (not root)
 ./install-ubuntu.sh
 ./verify.sh
 ```
@@ -23,4 +23,4 @@ pwsh ./verify.ps1
 | --- | --- |
 | Time | ~15 min |
 | Cost | €0 (no Azure resources) |
-| Tested | _Nov 2026_ |
+| Tested | Oct 2026 (Windows 11, Ubuntu 24.04 on WSL) |

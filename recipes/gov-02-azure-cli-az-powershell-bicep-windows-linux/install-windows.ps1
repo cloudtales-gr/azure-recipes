@@ -22,8 +22,8 @@ foreach ($id in $packages) {
 
 # The Az module goes into PowerShell 7 (pwsh), the shell every recipe uses
 $pwsh = Join-Path $env:ProgramFiles 'PowerShell\7\pwsh.exe'
-Write-Host '== Az PowerShell module (current user)'
-& $pwsh -NoProfile -Command 'Install-PSResource -Name Az -Repository PSGallery -Scope CurrentUser -TrustRepository -Quiet'
+Write-Host '== Az PowerShell module (current user, about 80 modules: 5-10 minutes)'
+& $pwsh -NoProfile -Command 'Install-PSResource -Name Az -Repository PSGallery -Scope CurrentUser -TrustRepository'
 
 if ($WithVSCode) {
     $code = Join-Path $env:LOCALAPPDATA 'Programs\Microsoft VS Code\bin\code.cmd'
@@ -31,4 +31,4 @@ if ($WithVSCode) {
     foreach ($ext in 'ms-azuretools.vscode-bicep', 'ms-vscode.azurecli', 'ms-vscode.powershell') { & $code --install-extension $ext }
 }
 
-Write-Host "`nDone. Open a NEW terminal (so PATH is refreshed) and run: pwsh ./verify.ps1"
+Write-Host "`nDone. Close EVERY terminal window (Windows Terminal keeps the old PATH for new tabs), open a new one and run: pwsh ./verify.ps1"
