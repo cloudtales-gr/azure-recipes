@@ -43,9 +43,9 @@ tools/catalog.py          catalog checks (CI) and this README's list
 - ⬜ **GOV-11** Azure Landing Zone with the Bicep accelerator, sized for a small tenant
 - ⬜ **GOV-12** Activity Log in Log Analytics: who deleted what, and when
 
-### Identity with Microsoft Entra ID (0/14)
+### Identity with Microsoft Entra ID (1/14)
 
-- ⬜ **ID-01** Users and groups with Microsoft Graph PowerShell
+- ✅ **ID-01** [Users and groups with Microsoft Graph PowerShell](recipes/id-01-users-groups-microsoft-graph-powershell/) · [article](https://cloudtales.gr/recipes/identity/id-01-users-groups-microsoft-graph-powershell/)
 - ⬜ **ID-02** Dynamic groups by department and device
 - ⬜ **ID-03** Conditional Access baseline: MFA for admins, block legacy authentication
 - ⬜ **ID-04** Passwordless with passkeys (FIDO2 and Microsoft Authenticator)
