@@ -3,3 +3,6 @@
 *.log
 out/
 users-and-groups.csv
+public/
+.hugo_build.lock
+resources/
