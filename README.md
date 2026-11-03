@@ -28,9 +28,9 @@ tools/catalog.py          catalog checks (CI) and this README's list
 
 <!-- recipes:begin -->
 
-### Foundations and governance (1/12)
+### Foundations and governance (2/12)
 
-- ⬜ **GOV-01** Secure a new Azure tenant in the first hour: MFA, break-glass accounts, security defaults
+- ✅ **GOV-01** [Secure a new Azure tenant in the first hour: MFA, break-glass accounts, security defaults](recipes/gov-01-secure-new-azure-tenant-first-hour/) · [article](https://cloudtales.gr/recipes/governance/gov-01-secure-new-azure-tenant-first-hour/)
 - ✅ **GOV-02** [Azure CLI, Az PowerShell and Bicep on Windows and Linux: the toolkit every recipe uses](recipes/gov-02-azure-cli-az-powershell-bicep-windows-linux/) · [article](https://cloudtales.gr/recipes/governance/gov-02-azure-cli-az-powershell-bicep-windows-linux/)
 - ⬜ **GOV-03** Management groups and subscriptions for a small organisation
 - ⬜ **GOV-04** Naming and tagging standard, enforced with Azure Policy
