@@ -60,7 +60,7 @@ tools/catalog.py          catalog checks (CI) and this README's list
 - ⬜ **ID-13** Sign-in logs in Log Analytics: KQL for suspicious sign-ins
 - ⬜ **ID-14** Alert when a break-glass account signs in
 
-### Networking (0/15)
+### Networking (1/16)
 
 - ⬜ **NET-01** VNet, subnets and NSGs: the first network
 - ⬜ **NET-02** Hub and spoke with VNet peering in Bicep
@@ -77,6 +77,7 @@ tools/catalog.py          catalog checks (CI) and this README's list
 - ⬜ **NET-13** Azure DNS: host a public zone and move a domain to it
 - ⬜ **NET-14** VNet flow logs and Traffic Analytics
 - ⬜ **NET-15** Network Watcher: troubleshooting "it doesn't connect"
+- ✅ **NET-16** [Cloud Shell in a private VNet: deploy it, tear it down, free a stuck subnet](recipes/net-16-cloud-shell-private-vnet-deploy-teardown/) · [article](https://cloudtales.gr/recipes/networking/net-16-cloud-shell-private-vnet-deploy-teardown/)
 
 ### Virtual Machines (0/12)
 

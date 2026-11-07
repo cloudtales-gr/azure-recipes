@@ -437,6 +437,13 @@
       "slug": "net-15-network-watcher-connection-troubleshooting"
     },
     {
+      "id": "NET-16",
+      "category": "NET",
+      "order": 16,
+      "title": "Cloud Shell in a private VNet: deploy it, tear it down, free a stuck subnet",
+      "slug": "net-16-cloud-shell-private-vnet-deploy-teardown"
+    },
+    {
       "id": "VM-01",
       "category": "VM",
       "order": 1,

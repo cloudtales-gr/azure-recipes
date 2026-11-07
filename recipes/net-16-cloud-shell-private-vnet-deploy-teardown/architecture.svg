@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="560" viewBox="0 0 1100 560" font-family="Segoe UI, Arial, sans-serif">
+  <rect width="1100" height="560" fill="#ffffff"/>
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#475569"/>
+    </marker>
+    <marker id="arrRed" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#c2410c"/>
+    </marker>
+  </defs>
+
+  <text x="550" y="34" text-anchor="middle" font-size="20" font-weight="600" fill="#0f172a">Cloud Shell in a private VNet: who owns what</text>
+
+  <!-- Your subscription -->
+  <rect x="30" y="60" width="620" height="470" rx="12" fill="#f0f7ff" stroke="#2563eb" stroke-width="2"/>
+  <text x="50" y="88" font-size="16" font-weight="600" fill="#1e40af">Your subscription</text>
+  <text x="50" y="108" font-size="13" fill="#334155">rg-cs-vnet-lab · North Europe</text>
+
+  <!-- VNet -->
+  <rect x="50" y="125" width="380" height="385" rx="10" fill="#ffffff" stroke="#64748b" stroke-dasharray="6 4"/>
+  <text x="66" y="150" font-size="14" font-weight="600" fill="#0f172a">vnet-cs-lab  10.0.0.0/16</text>
+
+  <!-- cloudshellsubnet -->
+  <rect x="66" y="165" width="348" height="120" rx="8" fill="#fff7ed" stroke="#c2410c" stroke-width="2"/>
+  <text x="80" y="189" font-size="14" font-weight="600" fill="#9a3412">cloudshellsubnet  10.0.1.0/24</text>
+  <text x="80" y="211" font-size="12.5" fill="#334155">Delegated: ContainerInstance/containerGroups</text>
+  <text x="80" y="231" font-size="12.5" fill="#334155">Session NIC: 10.0.1.109</text>
+  <rect x="80" y="244" width="200" height="28" rx="6" fill="#c2410c"/>
+  <text x="180" y="263" text-anchor="middle" font-size="13" font-weight="600" fill="#ffffff">SAL "acisal" (owned by ACI)</text>
+
+  <!-- relaysubnet -->
+  <rect x="66" y="300" width="348" height="90" rx="8" fill="#f8fafc" stroke="#94a3b8"/>
+  <text x="80" y="324" font-size="14" font-weight="600" fill="#0f172a">relaysubnet  10.0.2.0/24</text>
+  <text x="80" y="346" font-size="12.5" fill="#334155">Private endpoint → Azure Relay</text>
+  <text x="80" y="366" font-size="12.5" fill="#334155">(arn-cs-lab-vd01, private DNS zone)</text>
+
+  <!-- storagesubnet -->
+  <rect x="66" y="405" width="348" height="90" rx="8" fill="#f8fafc" stroke="#94a3b8"/>
+  <text x="80" y="429" font-size="14" font-weight="600" fill="#0f172a">storagesubnet  10.0.3.0/24</text>
+  <text x="80" y="451" font-size="12.5" fill="#334155">Service endpoint → storage account</text>
+  <text x="80" y="471" font-size="12.5" fill="#334155">(stcslabvd01 / acsshare)</text>
+
+  <!-- Side resources -->
+  <rect x="450" y="300" width="180" height="90" rx="8" fill="#ffffff" stroke="#94a3b8"/>
+  <text x="540" y="332" text-anchor="middle" font-size="13.5" font-weight="600" fill="#0f172a">Azure Relay</text>
+  <text x="540" y="352" text-anchor="middle" font-size="12" fill="#334155">hybrid connection</text>
+  <text x="540" y="370" text-anchor="middle" font-size="12" fill="#334155">per active session</text>
+
+  <rect x="450" y="405" width="180" height="90" rx="8" fill="#ffffff" stroke="#94a3b8"/>
+  <text x="540" y="437" text-anchor="middle" font-size="13.5" font-weight="600" fill="#0f172a">Storage account</text>
+  <text x="540" y="457" text-anchor="middle" font-size="12" fill="#334155">clouddrive file share</text>
+
+  <line x1="414" y1="345" x2="448" y2="345" stroke="#475569" stroke-width="1.6" marker-end="url(#arr)"/>
+  <line x1="414" y1="450" x2="448" y2="450" stroke="#475569" stroke-width="1.6" marker-end="url(#arr)"/>
+
+  <!-- Microsoft subscription -->
+  <rect x="700" y="60" width="370" height="300" rx="12" fill="#f8fafc" stroke="#0f172a" stroke-width="2" stroke-dasharray="8 5"/>
+  <text x="720" y="88" font-size="16" font-weight="600" fill="#0f172a">Microsoft-managed subscription</text>
+  <text x="720" y="108" font-size="13" fill="#334155">Not visible in your subscription</text>
+
+  <rect x="720" y="150" width="330" height="120" rx="8" fill="#ffffff" stroke="#c2410c" stroke-width="2"/>
+  <text x="736" y="175" font-size="13" fill="#334155">resourceGroups/cag-westeurope-1</text>
+  <text x="736" y="200" font-size="14" font-weight="600" fill="#9a3412">Container group</text>
+  <text x="736" y="221" font-size="12.5" fill="#334155">ae2prodamcag-1-…</text>
+  <text x="736" y="249" font-size="12" fill="#334155">Created by Cloud Shell, released by Cloud Shell</text>
+
+  <!-- SAL link -->
+  <path d="M 280 258 C 560 258, 560 210, 718 210" fill="none" stroke="#c2410c" stroke-width="2.2" marker-end="url(#arrRed)"/>
+  <text x="575" y="200" text-anchor="middle" font-size="12" fill="#9a3412">blocks subnet / VNet deletion</text>
+
+  <!-- User -->
+  <rect x="740" y="400" width="290" height="100" rx="10" fill="#ffffff" stroke="#2563eb"/>
+  <text x="885" y="432" text-anchor="middle" font-size="14" font-weight="600" fill="#1e40af">You (portal / shell.azure.com)</text>
+  <text x="885" y="455" text-anchor="middle" font-size="12.5" fill="#334155">Cloud Shell user settings point</text>
+  <text x="885" y="474" text-anchor="middle" font-size="12.5" fill="#334155">at the VNet, Relay and file share</text>
+  <line x1="740" y1="440" x2="632" y2="360" stroke="#475569" stroke-width="1.6" marker-end="url(#arr)"/>
+</svg>
