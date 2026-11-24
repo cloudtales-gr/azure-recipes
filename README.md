@@ -60,9 +60,9 @@ tools/catalog.py          catalog checks (CI) and this README's list
 - ⬜ **ID-13** Sign-in logs in Log Analytics: KQL for suspicious sign-ins
 - ⬜ **ID-14** Alert when a break-glass account signs in
 
-### Networking (1/16)
+### Networking (2/16)
 
-- ⬜ **NET-01** VNet, subnets and NSGs: the first network
+- ✅ **NET-01** [VNet, subnets and NSGs: the first network](recipes/net-01-vnet-subnets-nsgs-first-network/) · [article](https://cloudtales.gr/recipes/networking/net-01-vnet-subnets-nsgs-first-network/)
 - ⬜ **NET-02** Hub and spoke with VNet peering in Bicep
 - ⬜ **NET-03** Private Endpoint for a Storage account with Private DNS
 - ⬜ **NET-04** Azure Bastion: RDP and SSH without public IPs
