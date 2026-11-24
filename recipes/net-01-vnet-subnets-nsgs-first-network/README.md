@@ -5,6 +5,8 @@ Article: <https://cloudtales.gr/recipes/networking/net-01-vnet-subnets-nsgs-firs
 What this deploys: a VNet with three private subnets (web, app, data), one NSG per subnet that lets each tier
 reach only the next one, and one small Ubuntu VM per subnet to prove it. No public IPs; the tests use Run Command.
 
+![Architecture: three subnets, one NSG each, and the connections the tests expect](architecture.svg)
+
 ## Run it
 
 ```powershell
